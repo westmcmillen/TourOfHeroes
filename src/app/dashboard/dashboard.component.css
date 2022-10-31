@@ -1,0 +1,50 @@
+/* DashboardComponent's private CSS styles */
+
+h2 {
+  text-align: center;
+}
+
+.heroes-menu {
+  padding: 0;
+  margin: auto;
+  max-width: 1000px;
+
+  /* flexbox */
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+a {
+  background-color: #3f525c;
+  border-radius: 2px;
+  padding: 1rem;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  min-width: 70px;
+  box-sizing: border-box;
+  width: 100%;
+
+  /* flexbox */
+  order: 0;
+  align-self: auto;
+}
+
+@media (min-width: 600px) {
+  .heroes-menu {
+    flex-direction: row;
+  }
+}
+
+a:hover {
+  background-color: black;
+}
