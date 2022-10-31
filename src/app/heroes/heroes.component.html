@@ -1,0 +1,46 @@
+<h2>My Heroes</h2>
+
+<div>
+  <mat-form-field
+    class="full-width"
+    appearance="fill">
+    <mat-label>Heroes Search</mat-label>
+    <input
+      matInput
+      placeholder="Bombasto"
+      #heroName />
+  </mat-form-field>
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button
+    type="button"
+    class="add-button full-width"
+    mat-stroked-button
+    (click)="add(heroName.value); heroName.value = ''">
+    Add hero
+  </button>
+</div>
+
+<ul class="heroes">
+  <li
+    *ngFor="let hero of heroes"
+    class="flex">
+    <a
+      routerLink="/detail/{{ hero.id }}"
+      class="link">
+      <div class="flex">
+        <div class="badge">{{ hero.id }}</div>
+        <div class="mr-auto">{{ hero.name }}</div>
+      </div>
+    </a>
+    <button
+      class="x"
+      mat-mini-fab
+      color=""
+      type="button"
+      title="delete hero"
+      (click)="delete(hero)">
+      x
+    </button>
+  </li>
+</ul>
