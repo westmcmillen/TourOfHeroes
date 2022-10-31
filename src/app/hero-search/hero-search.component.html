@@ -1,0 +1,21 @@
+<div id="search-component">
+  <mat-form-field
+    class="full-width"
+    appearance="fill">
+    <mat-label>Heroes Search</mat-label>
+    <input
+      matInput
+      placeholder="Bombasto"
+      #searchBox
+      id="search-box"
+      (input)="search(searchBox.value)" />
+  </mat-form-field>
+
+  <ul class="search-result">
+    <li *ngFor="let hero of heroes$ | async">
+      <a routerLink="/detail/{{ hero.id }}">
+        {{ hero.name }}
+      </a>
+    </li>
+  </ul>
+</div>
